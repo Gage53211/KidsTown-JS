@@ -20,6 +20,19 @@ The replacement website:
 - Should avoid JavaScript frameworks
 
 ## Technologies Used
-- JavaScript
+- React
 - GitHub Pages
-- AI-assisted development 
+- AI-assisted development
+
+## What Pages Are Done
+- Index
+
+## What Pages Need To Be Done
+- Home
+- Citypark
+- Library
+- Museum
+- School
+- Township
+- Toystore
+- Zoo
