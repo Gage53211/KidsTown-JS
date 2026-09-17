@@ -1,7 +1,10 @@
 /**
  * Renders the KidsTown Landing Page / Visitor Center.
- * @param {Function} navigate - A router callback function to handle navigation changes (e.g., moving to KEY=1000).
+ * @param {Function} navigate A router callback function to handle navigation changes (e.g., moving to KEY=1000).
  */
+
+// A simple client-side router function to handle view transitions
+
 export function renderLandingPage(navigate) {
     const app = document.getElementById('app');
 
@@ -35,6 +38,17 @@ export function renderLandingPage(navigate) {
         </div>
     `;
 
+    const handleNavigation = (e) => {
+        e.preventDefault();
+        if (typeof navigate === 'function') {
+            // Passing '1000' mimics the original ?KEY=1000 parameter request
+            navigate('1000');
+        } else {
+            console.warn("Navigation handler not provided.");
+        }
+    };
+
+
     // Apply basic inline/dynamic styling to preserve the 1998 aesthetic 
     // (You can also move these to a global styles.css file for cleaner maintenance)
     const container = app.querySelector('.landing-container');
@@ -61,15 +75,6 @@ export function renderLandingPage(navigate) {
     link.style.textDecoration = 'underline';
 
     // Event listener to replace the old CGI backend route with client-side routing
-    const handleNavigation = (e) => {
-        e.preventDefault();
-        if (typeof navigate === 'function') {
-            // Passing '1000' mimics the original ?KEY=1000 parameter request
-            navigate('1000'); 
-        } else {
-            console.warn("Navigation handler not provided.");
-        }
-    };
 
     app.querySelector('#visit-link').addEventListener('click', handleNavigation);
     app.querySelector('#visit-img-link').addEventListener('click', handleNavigation);
