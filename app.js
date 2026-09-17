@@ -1,6 +1,6 @@
-import { renderLandingPage } from './landingPage.js';
+import { renderLandingPage } from './scripts/landingPage.js';
 
-// A simple client-side router function to handle view transitions
+
 function router(key) {
     console.log(`Navigating to route key: ${key}`);
     
